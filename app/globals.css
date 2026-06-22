@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --lime: #D4F53C;
+  --limeLight: #E8FA7A;
+  --limeDark: #B8D935;
+  --dark: #1A1A1A;
+  --darkCard: #2A2A2A;
+  --grayBg: #FAFAFA;
+  --grayLight: #F5F5F5;
+  --grayMid: #E5E5E5;
+  --grayText: #8A8A8A;
+  --income: #22C55E;
+  --expense: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  --iosBlue: #007AFF;
+  --iosGreen: #34C759;
+  --iosRed: #FF3B30;
+  --iosOrange: #FF9500;
+  --iosPurple: #AF52DE;
+  --textPrimary: #1A1A1A;
+  --textSecondary: #8A8A8A;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-lime: #D4F53C;
+  --color-limeLight: #E8FA7A;
+  --color-limeDark: #B8D935;
+  --color-dark: #1A1A1A;
+  --color-darkCard: #2A2A2A;
+  --color-grayBg: #FAFAFA;
+  --color-grayLight: #F5F5F5;
+  --color-grayMid: #E5E5E5;
+  --color-grayText: #8A8A8A;
+  --color-income: #22C55E;
+  --color-expense: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-iosBlue: #007AFF;
+  --color-iosGreen: #34C759;
+  --color-iosRed: #FF3B30;
+  --color-iosOrange: #FF9500;
+  --color-iosPurple: #AF52DE;
+  --color-textPrimary: #1A1A1A;
+  --color-textSecondary: #8A8A8A;
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--grayBg);
+  color: var(--dark);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
