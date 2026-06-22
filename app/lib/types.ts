@@ -1,6 +1,7 @@
 export interface Transaction {
   id: string;
   created_at: string;
+  user_id: string;
   type: "income" | "expense";
   amount: number;
   category: string;
@@ -12,6 +13,7 @@ export interface Transaction {
 export interface Budget {
   id: string;
   created_at: string;
+  user_id: string;
   category: string;
   limit_amount: number;
   spent_amount: number;
@@ -23,6 +25,7 @@ export interface Budget {
 export interface Goal {
   id: string;
   created_at: string;
+  user_id: string;
   name: string;
   target_amount: number;
   current_amount: number;
@@ -34,6 +37,7 @@ export interface Goal {
 export interface Debt {
   id: string;
   created_at: string;
+  user_id: string;
   type: "owed" | "owing";
   person: string;
   amount: number;
@@ -45,6 +49,7 @@ export interface Debt {
 export interface Subscription {
   id: string;
   created_at: string;
+  user_id: string;
   name: string;
   amount: number;
   billing_cycle: "weekly" | "monthly" | "yearly";
@@ -56,6 +61,7 @@ export interface Subscription {
 export interface Trial {
   id: string;
   created_at: string;
+  user_id: string;
   name: string;
   start_date: string;
   end_date: string;
@@ -63,4 +69,11 @@ export interface Trial {
   amount: number;
   icon: string;
   color: string;
+}
+
+export interface Profile {
+  id: string;
+  email: string;
+  name: string;
+  created_at: string;
 }

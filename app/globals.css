@@ -60,3 +60,8 @@ body {
   color: var(--dark);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
+
+.dark body {
+  background: var(--dark);
+  color: #E5E5E5;
+}
