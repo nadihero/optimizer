@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --lime: #725CFF;
+  --limeLight: #9D8FFF;
+  --limeDark: #5A45D6;
+  --dark: #0F172A;
+  --darkCard: rgba(30, 41, 55, 0.75);
+  --grayBg: #FAFAFA;
+  --grayLight: #F5F5F5;
+  --grayMid: #E5E5E5;
+  --grayText: #94A3B8;
+  --income: #22C55E;
+  --expense: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  --iosBlue: #007AFF;
+  --iosGreen: #34C759;
+  --iosRed: #FF3B30;
+  --iosOrange: #FF9500;
+  --iosPurple: #AF52DE;
+  --textPrimary: #1A1A1A;
+  --textSecondary: #8A8A8A;
+  --glass-bg: rgba(30, 41, 55, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --main-gradient: linear-gradient(135deg, #725CFF 0%, #A78BFA 100%);
+}
+
+@theme inline {
+  --color-lime: #725CFF;
+  --color-limeLight: #9D8FFF;
+  --color-limeDark: #5A45D6;
+  --color-dark: #0F172A;
+  --color-darkCard: rgba(30, 41, 55, 0.75);
+  --color-grayBg: #FAFAFA;
+  --color-grayLight: #F5F5F5;
+  --color-grayMid: #E5E5E5;
+  --color-grayText: #94A3B8;
+  --color-income: #22C55E;
+  --color-expense: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-iosBlue: #007AFF;
+  --color-iosGreen: #34C759;
+  --color-iosRed: #FF3B30;
+  --color-iosOrange: #FF9500;
+  --color-iosPurple: #AF52DE;
+  --color-textPrimary: #1A1A1A;
+  --color-textSecondary: #8A8A8A;
+  --color-glass: rgba(30, 41, 55, 0.75);
+  --font-sans: var(--font-outfit);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--grayBg);
+  color: var(--dark);
+  font-family: var(--font-outfit);
+}
+
+.dark body {
+  background: var(--dark);
+  color: #F8FAFC;
+}
+
+.glass-card {
+  background: rgba(30, 41, 55, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(114, 92, 255, 0.1);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-card-light {
+  background: rgba(30, 41, 55, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(114, 92, 255, 0.1);
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}
