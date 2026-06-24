@@ -128,7 +128,7 @@ export default function BudgetPage() {
                     </div>
                   </div>
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden mb-2">
-                    <div className={`h-full rounded-full transition-all duration-500 ${isOver ? "bg-expense" : percentage > 75 ? "bg-warning" : ""}`} style={!isOver && percentage <= 75 ? { background: "var(--main-gradient)" } : {}} style={{ width: `${Math.min(percentage, 100)}%` }}></div>
+                    <div className={`h-full rounded-full transition-all duration-500 ${isOver ? "bg-expense" : percentage > 75 ? "bg-warning" : ""}`} style={{ width: `${Math.min(percentage, 100)}%`, background: !isOver && percentage <= 75 ? "var(--main-gradient)" : undefined }}></div>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-xs text-gray-400">{formatRupiah(Number(budget.spent_amount))}</span>
