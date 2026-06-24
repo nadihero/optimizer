@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/context/AuthContext";
+import Image from "next/image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -33,9 +34,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-grayBg flex flex-col justify-center px-6">
       <div className="mb-8 text-center">
         <div className="w-16 h-16 bg-lime rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-lime/40">
-          <svg className="w-8 h-8 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+          <Image src="/buddy.webp" alt="Logo" width={100} height={100} />
         </div>
         <h1 className="text-2xl font-bold text-dark">Naomi</h1>
         <p className="text-sm text-grayText mt-1">Personal Budget Tracker</p>
