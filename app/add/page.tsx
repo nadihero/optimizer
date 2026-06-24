@@ -28,6 +28,8 @@ export default function AddTransactionPage() {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [saving, setSaving] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     if (!authLoading && !user) router.push("/login");
@@ -37,10 +39,28 @@ export default function AddTransactionPage() {
     e.preventDefault();
     if (!amount || !category) return;
     setSaving(true);
+    setErrorMsg("");
+    setSuccessMsg("");
+
     const selectedCat = categories.find((c) => c.name === category);
-    await addTransaction({ type, amount: Number(amount.replace(/\./g, "")), category, description, date, icon_color: selectedCat?.color || "#8A8A8A" });
+    const { error } = await addTransaction({
+      type,
+      amount: Number(amount.replace(/\./g, "")),
+      category,
+      description,
+      date,
+      icon_color: selectedCat?.color || "#8A8A8A",
+    });
+
     setSaving(false);
-    router.push("/");
+
+    if (error) {
+      setErrorMsg(error);
+      return;
+    }
+
+    setSuccessMsg("Transaksi berhasil disimpan!");
+    setTimeout(() => router.push("/"), 1000);
   };
 
   const formatInputAmount = (value: string) => {
@@ -62,6 +82,16 @@ export default function AddTransactionPage() {
         </div>
       </header>
       <main className="px-5 pb-28">
+        {errorMsg && (
+          <div className="mx-5 mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-3">
+            <p className="text-sm text-expense">{errorMsg}</p>
+          </div>
+        )}
+        {successMsg && (
+          <div className="mx-5 mb-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-3">
+            <p className="text-sm text-income">{successMsg}</p>
+          </div>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="flex bg-grayLight dark:bg-darkCard rounded-full p-1 mb-6">
             <button type="button" onClick={() => setType("expense")} className={`flex-1 py-2.5 rounded-full text-sm font-medium transition ${type === "expense" ? "bg-white dark:bg-dark shadow-sm text-expense" : "text-grayText"}`}>Pengeluaran</button>
