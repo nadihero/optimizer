@@ -14,6 +14,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Naomi - Budget Tracker",
   description: "Personal Finance Tracker",
+  icons: {
+    icon: "/buddy.webp",
+  },
 };
 
 export const viewport = {
